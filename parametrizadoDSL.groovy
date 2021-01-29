@@ -1,5 +1,8 @@
 job('ejemplo2-job-DSL') {
 	description('Job DSL de ejemplo para el curso de Jenkins')
+	logRotator {
+        	daysToKeep(3)
+  	}
   	scm {
       		git('https://github.com/macloujulian/jenkins.job.parametrizado.git', 'main') { node ->
         		node / gitConfigName('macloujulian')
